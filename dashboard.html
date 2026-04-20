@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יום ראיונות ומיון — מבואות ים 23.4.26</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f6f3;
+    --surface: #ffffff;
+    --surface2: #f0efe9;
+    --border: #e2e0d8;
+    --border2: #ccc9be;
+    --text: #1a1916;
+    --text2: #6b6860;
+    --text3: #9e9c96;
+    --accent: #2d5a8e;
+    --accent-light: #e8f0fa;
+    --green: #1d6b44;
+    --green-light: #e4f5ec;
+    --orange: #c4621a;
+    --orange-light: #fdf0e6;
+    --red: #b83232;
+    --red-light: #fdeaea;
+    --purple: #6b3a9e;
+    --purple-light: #f3edfb;
+    --teal: #0f6e6a;
+    --teal-light: #e3f5f4;
+    --pink: #9e3a6b;
+    --pink-light: #fbedf4;
+    --amber: #8a6000;
+    --amber-light: #fdf6e3;
+    --slate: #3a5a6e;
+    --slate-light: #eaf2f7;
+    --rose: #8e2d2d;
+    --rose-light: #faeaea;
+    --indigo: #3a3a8e;
+    --indigo-light: #eeeef9;
+    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,.08);
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Heebo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    direction: rtl;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    gap: 1rem;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 16px; font-weight: 700;
+  }
+  .logo-text { font-size: 15px; font-weight: 600; color: var(--text); }
+  .logo-sub { font-size: 12px; color: var(--text2); }
+  .header-stats {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .hstat { text-align: center; }
+  .hstat-num { font-size: 20px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .hstat-label { font-size: 11px; color: var(--text3); margin-top: 2px; }
+  .header-actions { display: flex; gap: 8px; align-items: center; }
+  .btn {
+    padding: 7px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-family: 'Heebo', sans-serif;
+    cursor: pointer;
+    font-weight: 500;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--text);
+    transition: all .15s;
+  }
+  .btn:hover { background: var(--surface2); }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  .btn-primary:hover { background: #1e4a7a; }
+  .btn-success {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+  }
+  .btn-success:hover { background: #145233; }
+
+  /* ── TABS ── */
+  .tabs-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+  .tabs-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .tab-btn {
+    padding: 12px 20px;
+    font-size: 13px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text2);
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all .15s;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-count {
+    display: inline-block;
+    background: var(--surface2);
+    border-radius: 20px;
+    padding: 1px 7px;
+    font-size: 11px;
+    margin-right: 5px;
+    color: var(--text2);
+  }
+  .tab-btn.active .tab-count { background: var(--accent-light); color: var(--accent); }
+
+  /* ── MAIN ── */
+  .main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+  }
+
+  /* ── TOOLBAR ── */
+  .toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 8px 14px 8px 36px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-family: 'Heebo', sans-serif;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    transition: border .15s;
+  }
+  .search-box input:focus { border-color: var(--accent); }
+  .search-icon {
+    position: absolute;
+    left: 10px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--text3);
+    font-size: 14px;
+    pointer-events: none;
+  }
+  select {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-family: 'Heebo', sans-serif;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    cursor: pointer;
+  }
+
+  /* ── TABLE ── */
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead { background: var(--surface2); }
+  th {
+    padding: 10px 14px;
+    text-align: right;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    color: var(--text);
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafaf8; }
+  .num-col { color: var(--text3); font-size: 12px; width: 36px; }
+  .time-col { font-weight: 600; font-size: 14px; white-space: nowrap; }
+  .name-col { font-weight: 500; }
+  .note-badge {
+    display: inline-block;
+    background: var(--amber-light);
+    color: var(--amber);
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 20px;
+    margin-right: 6px;
+    font-weight: 500;
+  }
+
+  /* ── GRADE BADGES ── */
+  .grade-badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .grade-z  { background: var(--accent-light); color: var(--accent); }
+  .grade-kh { background: var(--green-light);  color: var(--green);  }
+  .grade-t  { background: var(--orange-light); color: var(--orange); }
+  .grade-y  { background: var(--purple-light); color: var(--purple); }
+  .grade-ya { background: var(--pink-light);   color: var(--pink);   }
+
+  /* ── INTERVIEWER CHIPS ── */
+  .iview-chip {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .loc-text { font-size: 12px; color: var(--text2); }
+
+  /* ── EDIT MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: var(--shadow-md);
+    direction: rtl;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+  .form-group { margin-bottom: 14px; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text2);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-family: 'Heebo', sans-serif;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    transition: border .15s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--accent); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .modal-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .btn-danger {
+    background: var(--red-light);
+    color: var(--red);
+    border-color: #f0c0c0;
+    margin-right: auto;
+  }
+  .btn-danger:hover { background: #fddcdc; }
+
+  /* ── ADD PANEL ── */
+  .add-panel {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .add-panel.open { display: block; }
+  .add-panel-title { font-size: 15px; font-weight: 600; margin-bottom: 1rem; }
+
+  /* ── TIMELINE VIEW ── */
+  .timeline-view { display: none; }
+  .timeline-view.active { display: block; }
+  .table-view { display: block; }
+  .table-view.hidden { display: none; }
+
+  .tl-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+  }
+  .tl-axis {
+    display: flex;
+    margin-right: 80px;
+    margin-bottom: 8px;
+    position: relative;
+    height: 20px;
+  }
+  .tl-tick {
+    position: absolute;
+    font-size: 11px;
+    color: var(--text3);
+    transform: translateX(-50%);
+  }
+  .tl-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    min-height: 38px;
+    gap: 0;
+  }
+  .tl-label {
+    width: 80px;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text2);
+    text-align: left;
+    padding-left: 12px;
+  }
+  .tl-track {
+    flex: 1;
+    background: var(--surface2);
+    border-radius: var(--radius-sm);
+    position: relative;
+    min-height: 36px;
+    min-width: 600px;
+  }
+  .tl-slot {
+    position: absolute;
+    top: 3px; bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 7px;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: opacity .15s, box-shadow .15s;
+    border: 1px solid transparent;
+  }
+  .tl-slot:hover { overflow: visible; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+  .tl-slot.dimmed { opacity: .15; }
+
+  /* ── STATUS ── */
+  .status-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    color: var(--text2);
+    border-top: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .status-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .4; }
+  }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+  .leg-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--text2);
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: all .15s;
+  }
+  .leg-item:hover { border-color: var(--border2); color: var(--text); }
+  .leg-item.active { border-color: var(--accent); color: var(--accent); background: var(--accent-light); font-weight: 500; }
+  .leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  .empty-state {
+    padding: 3rem;
+    text-align: center;
+    color: var(--text3);
+    font-size: 14px;
+  }
+
+  .view-toggle {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .vt { padding: 7px 13px; font-size: 12px; font-family: 'Heebo', sans-serif; cursor: pointer; border: none; background: var(--surface); color: var(--text2); font-weight: 500; transition: all .15s; }
+  .vt.active { background: var(--accent); color: white; }
+
+  @media (max-width: 700px) {
+    .header-stats { display: none; }
+    .main { padding: 1rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">מ</div>
+      <div>
+        <div class="logo-text">יום ראיונות ומיון</div>
+        <div class="logo-sub">פנימיית מבואות ים — 23.4.26</div>
+      </div>
+    </div>
+    <div class="header-stats">
+      <div class="hstat"><div class="hstat-num" id="totalCount">44</div><div class="hstat-label">סה"כ מועמדים</div></div>
+      <div class="hstat"><div class="hstat-num" id="shownCount">44</div><div class="hstat-label">מוצגים</div></div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-primary" onclick="openAdd()">+ הוסף מועמד</button>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-bar">
+  <div class="tabs-inner">
+    <button class="tab-btn active" onclick="setGrade('all',this)">הכל <span class="tab-count" id="cnt-all">44</span></button>
+    <button class="tab-btn" onclick="setGrade('z',this)">שכבת ז' <span class="tab-count" id="cnt-z">9</span></button>
+    <button class="tab-btn" onclick="setGrade('kh',this)">שכבת ח' <span class="tab-count" id="cnt-kh">4</span></button>
+    <button class="tab-btn" onclick="setGrade('t',this)">שכבת ט' <span class="tab-count" id="cnt-t">16</span></button>
+    <button class="tab-btn" onclick="setGrade('y',this)">שכבת י' <span class="tab-count" id="cnt-y">13</span></button>
+    <button class="tab-btn" onclick="setGrade('ya',this)">שכבת יא' <span class="tab-count" id="cnt-ya">2</span></button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- ADD PANEL -->
+  <div class="add-panel" id="addPanel">
+    <div class="add-panel-title">הוספת מועמד חדש</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>שם מועמד/ת *</label>
+        <input type="text" id="add-name" placeholder="שם מלא">
+      </div>
+      <div class="form-group">
+        <label>שכבה *</label>
+        <select id="add-grade">
+          <option value="z">ז'</option>
+          <option value="kh">ח'</option>
+          <option value="t">ט'</option>
+          <option value="y">י'</option>
+          <option value="ya">יא'</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>שעת ראיון</label>
+        <input type="text" id="add-time" placeholder="09:00">
+      </div>
+      <div class="form-group">
+        <label>מראיין פנימייה</label>
+        <input type="text" id="add-pi" placeholder="שם המראיין">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>מראיין בית ספר</label>
+        <input type="text" id="add-si" placeholder="שם המראיין">
+      </div>
+      <div class="form-group">
+        <label>מיקום</label>
+        <input type="text" id="add-loc" placeholder="משרד / חדר">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>הערה</label>
+      <input type="text" id="add-note" placeholder="הערה מיוחדת (אם יש)">
+    </div>
+    <div style="display:flex;gap:8px;">
+      <button class="btn btn-success" onclick="saveNew()">שמור</button>
+      <button class="btn" onclick="closeAdd()">ביטול</button>
+    </div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="חיפוש שם, מראיין, מיקום..." oninput="render()">
+    </div>
+    <select id="interviewerFilter" onchange="render()">
+      <option value="all">כל המראיינים</option>
+    </select>
+    <div class="view-toggle">
+      <button class="vt active" onclick="setView('table',this)">טבלה</button>
+      <button class="vt" onclick="setView('timeline',this)">לוח זמנים</button>
+    </div>
+  </div>
+
+  <!-- TABLE VIEW -->
+  <div class="table-view" id="tableView">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="num-col">#</th>
+            <th>שם מועמד/ת</th>
+            <th>שכבה</th>
+            <th>שעה</th>
+            <th>מראיין פנימייה</th>
+            <th>מראיין ביה"ס</th>
+            <th>מיקום</th>
+            <th>עריכה</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyState" style="display:none">לא נמצאו מועמדים</div>
+      <div class="status-bar">
+        <div class="status-dot"></div>
+        <span id="statusText">מחובר לנתונים בזמן אמת</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE VIEW -->
+  <div class="timeline-view" id="timelineView">
+    <div class="legend" id="legend"></div>
+    <div class="tl-container">
+      <div class="tl-axis" id="tlAxis"></div>
+      <div id="tlRows"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- EDIT MODAL -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <div class="modal-title">עריכת פרטי מועמד</div>
+    <input type="hidden" id="edit-id">
+    <div class="form-row">
+      <div class="form-group">
+        <label>שם מועמד/ת *</label>
+        <input type="text" id="edit-name">
+      </div>
+      <div class="form-group">
+        <label>שכבה</label>
+        <select id="edit-grade">
+          <option value="z">ז'</option>
+          <option value="kh">ח'</option>
+          <option value="t">ט'</option>
+          <option value="y">י'</option>
+          <option value="ya">יא'</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>שעת ראיון</label>
+        <input type="text" id="edit-time">
+      </div>
+      <div class="form-group">
+        <label>מראיין פנימייה</label>
+        <input type="text" id="edit-pi">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>מראיין בית ספר</label>
+        <input type="text" id="edit-si">
+      </div>
+      <div class="form-group">
+        <label>מיקום</label>
+        <input type="text" id="edit-loc">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>הערה</label>
+      <input type="text" id="edit-note">
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-danger" onclick="deleteEntry()">מחק</button>
+      <button class="btn btn-success" onclick="saveEdit()">שמור שינויים</button>
+      <button class="btn" onclick="closeEdit()">ביטול</button>
+    </div>
+  </div>
+</div>
+
+<!-- FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+import { getFirestore, collection, onSnapshot, addDoc, updateDoc, deleteDoc, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAvfUU_xN_PDG8hn5Yg4DGavbjf1kGfOZk",
+  authDomain: "mivoot-yom-mion.firebaseapp.com",
+  projectId: "mivoot-yom-mion",
+  storageBucket: "mivoot-yom-mion.firebasestorage.app",
+  messagingSenderId: "248249708831",
+  appId: "1:248249708831:web:d3a64af20939271923002a"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const colRef = collection(db, "candidates");
+
+// ── INITIAL DATA ──
+const INITIAL = [
+  {g:'z',gL:"ז'",n:'הללי אריאלי',t:'8:30',pi:'עמי',si:'',loc:'משרד רוני רובין',note:''},
+  {g:'z',gL:"ז'",n:'איתן רצאבי',t:'9:00',pi:'נועם',si:'חנ"מ/אורה/אאידה',loc:'משרד נועם',note:''},
+  {g:'z',gL:"ז'",n:'יהב וקסלר',t:'9:30',pi:'לירן',si:'חנ"מ אור',loc:'משרד נועם',note:''},
+  {g:'z',gL:"ז'",n:'גיא כהן',t:'11:30',pi:'נועם',si:'',loc:'משרד נועם',note:''},
+  {g:'z',gL:"ז'",n:'מייה נבילציה',t:'12:00',pi:'נועם',si:'חנ"מ/הדס ויובל',loc:'משרד נועם',note:''},
+  {g:'z',gL:"ז'",n:'עופרי פרנסיס',t:'12:30',pi:'אודי',si:'נועה לוי',loc:'משרד נועם',note:''},
+  {g:'z',gL:"ז'",n:'תבל גל אל',t:'13:00',pi:'אודי',si:'',loc:'משרד נועם',note:''},
+  {g:'z',gL:"ז'",n:'ליאל ביטון',t:'14:00',pi:'אודי',si:'',loc:'משרד רועי',note:''},
+  {g:'z',gL:"ז'",n:'נהוראי פרץ',t:'14:00',pi:'נועם',si:'',loc:'משרד נועם',note:''},
+  {g:'kh',gL:"ח'",n:'אמיתי הירש',t:'9:00',pi:'מיקי',si:'חנ"מ/הדס',loc:'מובילים',note:''},
+  {g:'kh',gL:"ח'",n:'אראל גלעדי',t:'11:00',pi:'רועי',si:'מור יועצת',loc:'משרד רועי',note:''},
+  {g:'kh',gL:"ח'",n:'אוריאנה מאיר',t:'12:00',pi:'מיקי',si:'',loc:'מובילים',note:''},
+  {g:'kh',gL:"ח'",n:'מיקה כתר',t:'12:30',pi:'מיקי',si:'אין צורך ביה"ס',loc:'מובילים',note:''},
+  {g:'t',gL:"ט'",n:'ניתאי אטון',t:'9:00',pi:'יובל',si:'ורד יועצת',loc:'משרד יובל',note:''},
+  {g:'t',gL:"ט'",n:'תומר סיוון רגב',t:'9:00',pi:'רועי',si:'מור ששון',loc:'משרד רועי',note:''},
+  {g:'t',gL:"ט'",n:'יהודה יוסף בן שלום',t:'9:30',pi:'נוה',si:'ורד יועצת',loc:'משרד רועי',note:''},
+  {g:'t',gL:"ט'",n:'שירת שוסטר',t:'9:30',pi:'עמי',si:'חנ"מ הדס',loc:'מובילים',note:''},
+  {g:'t',gL:"ט'",n:'אביב מרדכי גולדין',t:'10:00',pi:'רועי',si:'אורה',loc:'משרד רועי',note:''},
+  {g:'t',gL:"ט'",n:'רז מעין',t:'10:00',pi:'נוה',si:'חנ"מ/הדס ויובל',loc:'מובילים',note:''},
+  {g:'t',gL:"ט'",n:'אורי איזבוצקי',t:'10:30',pi:'נוה',si:'',loc:'מובילים',note:''},
+  {g:'t',gL:"ט'",n:'רומי הדסה פרידמן',t:'11:30',pi:'רועי',si:'',loc:'משרד רועי',note:''},
+  {g:'t',gL:"ט'",n:'אביגיל ברקוביץ',t:'12:30',pi:'לירן',si:'ורד יועצת',loc:'משרד רועי',note:''},
+  {g:'t',gL:"ט'",n:"נועם ג'קובס",t:'12:30',pi:'איתי',si:'',loc:'משרד יובל',note:''},
+  {g:'t',gL:"ט'",n:'יפתח יוסף',t:'13:00',pi:'איתי',si:'',loc:'משרד יובל',note:''},
+  {g:'t',gL:"ט'",n:'זהרה ענבר',t:'13:00',pi:'ערן',si:'אין צורך ביה"ס',loc:'מובילים',note:''},
+  {g:'t',gL:"ט'",n:'אמיליה קליינר',t:'14:00',pi:'שרון',si:'אין צורך ביה"ס',loc:'משרד יובל',note:''},
+  {g:'t',gL:"ט'",n:'יערה טל',t:'14:00',pi:'ערן',si:'אין צורך ביה"ס',loc:'מובילים',note:''},
+  {g:'t',gL:"ט'",n:'יהל אריה שוורץ',t:'14:30',pi:'שרון',si:'אין צורך ביה"ס',loc:'משרד יובל',note:''},
+  {g:'t',gL:"ט'",n:'תמרי ליכטמן',t:'14:30',pi:'איתי',si:'אין צורך ביה"ס',loc:'משרד רועי',note:''},
+  {g:'y',gL:"י'",n:'ניקול אבורמד',t:'9:00',pi:'נועם',si:'רונן',loc:'משרד נועם',note:'ראיון נוסף נדרש'},
+  {g:'y',gL:"י'",n:'אלה אטון',t:'9:00',pi:'נאור',si:'שירן',loc:'משרד קבט',note:'נדרש רכז'},
+  {g:'y',gL:"י'",n:'נהוראי גיגי',t:'9:30',pi:'נאור',si:'שירן',loc:'משרד קבט',note:''},
+  {g:'y',gL:"י'",n:'דנית שקורי',t:'9:30',pi:'חני',si:'רונן',loc:'משרד רוני רובין',note:''},
+  {g:'y',gL:"י'",n:'איתן פרץ',t:'10:00',pi:'חני',si:'רונן',loc:'משרד רוני רובין',note:''},
+  {g:'y',gL:"י'",n:'נויה שיר גויטה',t:'10:00',pi:'נאור',si:'גלית',loc:'משרד קבט',note:''},
+  {g:'y',gL:"י'",n:'הילה צור',t:'10:30',pi:'עמי',si:'',loc:'משרד נועם',note:''},
+  {g:'y',gL:"י'",n:'הראל חזן',t:'10:30',pi:'חני',si:'חנ"מ',loc:'משרד רוני רובין',note:''},
+  {g:'y',gL:"י'",n:'נועם אשד',t:'10:30',pi:'יובל',si:'גלית',loc:'משרד יובל',note:''},
+  {g:'y',gL:"י'",n:'עידו דנוך',t:'11:00',pi:'יובל',si:'חנ"מ',loc:'משרד יובל',note:''},
+  {g:'y',gL:"י'",n:'עמית רבני',t:'11:30',pi:'יובל',si:'',loc:'משרד יובל',note:''},
+  {g:'y',gL:"י'",n:'מיכל תורן',t:'11:30',pi:'ענבר',si:'',loc:'מובילים',note:''},
+  {g:'y',gL:"י'",n:'איילת אלון גולן',t:'14:00',pi:'ענבר',si:'',loc:'משרד קבט',note:''},
+  {g:'y',gL:"י'",n:'רוני ירון',t:'14:30',pi:'ענבר',si:'אין צורך ביה"ס',loc:'משרד קבט',note:''},
+  {g:'ya',gL:"יא'",n:'לביא גבעון',t:'9:00',pi:'לירן',si:'',loc:'חדר צוות הדס',note:''},
+  {g:'ya',gL:"יא'",n:'ים טל',t:'9:30',pi:'ערן',si:'',loc:'משרד יובל',note:''},
+];
+
+const PALETTES = {
+  עמי:  {bg:'#e8f0fa',color:'#1e4a7a',dot:'#2d5a8e'},
+  נועם: {bg:'#e4f5ec',color:'#1d6b44',dot:'#1d6b44'},
+  לירן: {bg:'#fbedf4',color:'#9e3a6b',dot:'#9e3a6b'},
+  אודי: {bg:'#fdf0e6',color:'#c4621a',dot:'#c4621a'},
+  מיקי: {bg:'#fdeaea',color:'#b83232',dot:'#b83232'},
+  רועי: {bg:'#eaf5ee',color:'#1a5c32',dot:'#1a5c32'},
+  יובל: {bg:'#f3edfb',color:'#6b3a9e',dot:'#6b3a9e'},
+  נוה:  {bg:'#e3f5f4',color:'#0f6e6a',dot:'#0f6e6a'},
+  איתי: {bg:'#f0efe9',color:'#4a4840',dot:'#888680'},
+  ערן:  {bg:'#faeaea',color:'#8e2d2d',dot:'#8e2d2d'},
+  שרון: {bg:'#fdf6e3',color:'#8a6000',dot:'#8a6000'},
+  נאור: {bg:'#eeeef9',color:'#3a3a8e',dot:'#3a3a8e'},
+  חני:  {bg:'#fbedf4',color:'#7a2d5a',dot:'#7a2d5a'},
+  ענבר: {bg:'#eaf2f7',color:'#3a5a6e',dot:'#3a5a6e'},
+};
+const DEF_PAL = {bg:'#f0efe9',color:'#4a4840',dot:'#888680'};
+
+const GRADE_LABELS = {z:"ז'",kh:"ח'",t:"ט'",y:"י'",ya:"יא'"};
+
+// ── STATE ──
+window._data = [];
+window._currentGrade = 'all';
+window._currentView = 'table';
+window._selInterviewer = 'all';
+window._editingId = null;
+
+// ── SEED DATA if empty ──
+async function seedIfEmpty(snapshot) {
+  if (!snapshot.empty) return;
+  document.getElementById('statusText').textContent = 'טוען נתונים ראשוניים...';
+  for (const item of INITIAL) {
+    await addDoc(colRef, item);
+  }
+}
+
+// ── LISTEN ──
+onSnapshot(colRef, (snapshot) => {
+  seedIfEmpty(snapshot);
+  window._data = snapshot.docs.map(d => ({id: d.id, ...d.data()}));
+  updateInterviewerFilter();
+  render();
+  updateCounts();
+  document.getElementById('statusText').textContent = 'מחובר — עדכון אחרון: ' + new Date().toLocaleTimeString('he-IL');
+});
+
+// ── INTERVIEWER FILTER ──
+function updateInterviewerFilter() {
+  const sel = document.getElementById('interviewerFilter');
+  const cur = sel.value;
+  const ivs = [...new Set(window._data.map(d => d.pi).filter(Boolean))].sort();
+  sel.innerHTML = '<option value="all">כל המראיינים</option>';
+  ivs.forEach(iv => {
+    const o = document.createElement('option');
+    o.value = iv; o.textContent = iv;
+    if (iv === cur) o.selected = true;
+    sel.appendChild(o);
+  });
+}
+
+// ── COUNTS ──
+function updateCounts() {
+  const grades = ['z','kh','t','y','ya'];
+  const all = window._data.length;
+  document.getElementById('cnt-all').textContent = all;
+  document.getElementById('totalCount').textContent = all;
+  grades.forEach(g => {
+    const el = document.getElementById('cnt-'+g);
+    if (el) el.textContent = window._data.filter(d => d.g === g).length;
+  });
+}
+
+// ── FILTER ──
+function filtered() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  const iv = document.getElementById('interviewerFilter').value;
+  return window._data.filter(d => {
+    if (window._currentGrade !== 'all' && d.g !== window._currentGrade) return false;
+    if (iv !== 'all' && d.pi !== iv) return false;
+    if (q) {
+      const blob = [d.n, d.pi, d.si, d.loc, d.gL, d.note].join(' ').toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    return true;
+  }).sort((a,b) => {
+    const toMin = t => { if(!t) return 999*60; const [h,m] = t.split(':').map(Number); return h*60+m; };
+    return toMin(a.t) - toMin(b.t);
+  });
+}
+
+// ── RENDER ──
+window.render = function() {
+  const rows = filtered();
+  document.getElementById('shownCount').textContent = rows.length;
+
+  if (window._currentView === 'table') {
+    renderTable(rows);
+  } else {
+    renderTimeline();
+  }
+};
+
+function gradeClass(g) {
+  return {z:'grade-z',kh:'grade-kh',t:'grade-t',y:'grade-y',ya:'grade-ya'}[g] || '';
+}
+
+function ivChip(pi) {
+  if (!pi) return '—';
+  const pal = PALETTES[pi] || DEF_PAL;
+  return `<span class="iview-chip" style="background:${pal.bg};color:${pal.color}">${pi}</span>`;
+}
+
+function renderTable(rows) {
+  const tbody = document.getElementById('tableBody');
+  const empty = document.getElementById('emptyState');
+  if (!rows.length) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  tbody.innerHTML = rows.map((d, i) => `
+    <tr>
+      <td class="num-col">${i+1}</td>
+      <td class="name-col">
+        ${d.n}
+        ${d.note ? `<span class="note-badge">${d.note}</span>` : ''}
+      </td>
+      <td><span class="grade-badge ${gradeClass(d.g)}">${d.gL||GRADE_LABELS[d.g]||d.g}</span></td>
+      <td class="time-col">${d.t||'—'}</td>
+      <td>${ivChip(d.pi)}</td>
+      <td><span class="loc-text">${d.si||'—'}</span></td>
+      <td><span class="loc-text">${d.loc||'—'}</span></td>
+      <td><button class="btn" style="padding:4px 10px;font-size:12px;" onclick="openEdit('${d.id}')">עריכה</button></td>
+    </tr>
+  `).join('');
+}
+
+// ── TIMELINE ──
+const START_MIN = 8*60+30, END_MIN = 15*60+30, TOTAL = END_MIN - START_MIN;
+function pct(m) { return ((m-START_MIN)/TOTAL*100).toFixed(2)+'%'; }
+function pctW(s,e) { return ((e-s)/TOTAL*100).toFixed(2)+'%'; }
+function toMin(t) { if(!t) return START_MIN; const [h,m]=t.split(':').map(Number); return h*60+m; }
+
+function renderTimeline() {
+  const selIv = document.getElementById('interviewerFilter').value;
+
+  // Legend
+  const allIvs = [...new Set(window._data.map(d=>d.pi).filter(Boolean))].sort();
+  const leg = document.getElementById('legend');
+  leg.innerHTML = allIvs.map(iv => {
+    const pal = PALETTES[iv]||DEF_PAL;
+    const active = selIv === iv;
+    return `<div class="leg-item${active?' active':''}" onclick="toggleIv('${iv}')">
+      <div class="leg-dot" style="background:${pal.dot}"></div>${iv}
+    </div>`;
+  }).join('');
+
+  // Axis
+  const axis = document.getElementById('tlAxis');
+  axis.innerHTML = '';
+  [9,10,11,12,13,14,15].forEach(h => {
+    const t = document.createElement('div');
+    t.className = 'tl-tick';
+    t.style.left = pct(h*60);
+    t.textContent = h+':00';
+    axis.appendChild(t);
+  });
+
+  // Rows by grade
+  const grades = [{key:'z',label:"ז'"},{key:'kh',label:"ח'"},{key:'t',label:"ט'"},{key:'y',label:"י'"},{key:'ya',label:"יא'"}];
+  const tlRows = document.getElementById('tlRows');
+  tlRows.innerHTML = '';
+
+  grades.forEach(({key,label}) => {
+    const items = window._data.filter(d=>d.g===key);
+    if (!items.length) return;
+
+    const row = document.createElement('div');
+    row.className = 'tl-row';
+
+    const lbl = document.createElement('div');
+    lbl.className = 'tl-label';
+    lbl.textContent = 'שכבת '+label;
+    row.appendChild(lbl);
+
+    const track = document.createElement('div');
+    track.className = 'tl-track';
+
+    items.forEach(d => {
+      const pal = PALETTES[d.pi]||DEF_PAL;
+      const sm = toMin(d.t);
+      const em = sm + 30;
+      const dimmed = selIv !== 'all' && d.pi !== selIv;
+      const slot = document.createElement('div');
+      slot.className = 'tl-slot' + (dimmed?' dimmed':'');
+      slot.style.cssText = `left:${pct(sm)};width:${pctW(sm,em)};background:${pal.bg};color:${pal.color};border-color:${pal.dot}`;
+      slot.textContent = d.n;
+      slot.title = `${d.n} | ${d.t} | ${d.pi} | ${d.loc}`;
+      slot.onclick = () => openEdit(d.id);
+      track.appendChild(slot);
+    });
+
+    row.appendChild(track);
+    tlRows.appendChild(row);
+  });
+}
+
+window.toggleIv = function(iv) {
+  const sel = document.getElementById('interviewerFilter');
+  sel.value = (sel.value === iv ? 'all' : iv);
+  render();
+};
+
+// ── VIEWS & GRADES ──
+window.setView = function(v, el) {
+  window._currentView = v;
+  document.querySelectorAll('.vt').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tableView').classList.toggle('hidden', v!=='table');
+  document.getElementById('timelineView').classList.toggle('active', v==='timeline');
+  render();
+};
+
+window.setGrade = function(g, el) {
+  window._currentGrade = g;
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  render();
+};
+
+// ── ADD ──
+window.openAdd = function() {
+  document.getElementById('addPanel').classList.add('open');
+  document.getElementById('add-name').focus();
+};
+window.closeAdd = function() {
+  document.getElementById('addPanel').classList.remove('open');
+  ['name','time','pi','si','loc','note'].forEach(f => document.getElementById('add-'+f).value='');
+};
+window.saveNew = async function() {
+  const name = document.getElementById('add-name').value.trim();
+  if (!name) { alert('נא להזין שם מועמד'); return; }
+  const g = document.getElementById('add-grade').value;
+  await addDoc(colRef, {
+    g, gL: GRADE_LABELS[g],
+    n: name,
+    t: document.getElementById('add-time').value.trim(),
+    pi: document.getElementById('add-pi').value.trim(),
+    si: document.getElementById('add-si').value.trim(),
+    loc: document.getElementById('add-loc').value.trim(),
+    note: document.getElementById('add-note').value.trim(),
+  });
+  closeAdd();
+};
+
+// ── EDIT ──
+window.openEdit = function(id) {
+  const d = window._data.find(x=>x.id===id);
+  if (!d) return;
+  window._editingId = id;
+  document.getElementById('edit-id').value = id;
+  document.getElementById('edit-name').value = d.n||'';
+  document.getElementById('edit-grade').value = d.g||'z';
+  document.getElementById('edit-time').value = d.t||'';
+  document.getElementById('edit-pi').value = d.pi||'';
+  document.getElementById('edit-si').value = d.si||'';
+  document.getElementById('edit-loc').value = d.loc||'';
+  document.getElementById('edit-note').value = d.note||'';
+  document.getElementById('editModal').classList.add('open');
+};
+window.closeEdit = function() {
+  document.getElementById('editModal').classList.remove('open');
+  window._editingId = null;
+};
+window.saveEdit = async function() {
+  const id = window._editingId;
+  if (!id) return;
+  const g = document.getElementById('edit-grade').value;
+  await updateDoc(doc(db,'candidates',id), {
+    g, gL: GRADE_LABELS[g],
+    n: document.getElementById('edit-name').value.trim(),
+    t: document.getElementById('edit-time').value.trim(),
+    pi: document.getElementById('edit-pi').value.trim(),
+    si: document.getElementById('edit-si').value.trim(),
+    loc: document.getElementById('edit-loc').value.trim(),
+    note: document.getElementById('edit-note').value.trim(),
+  });
+  closeEdit();
+};
+window.deleteEntry = async function() {
+  const id = window._editingId;
+  if (!id) return;
+  if (!confirm('למחוק את המועמד? הפעולה לא ניתנת לביטול.')) return;
+  await deleteDoc(doc(db,'candidates',id));
+  closeEdit();
+};
+
+// Close modal on overlay click
+document.getElementById('editModal').addEventListener('click', function(e) {
+  if (e.target === this) closeEdit();
+});
+
+</script>
+</body>
+</html>
